@@ -1,0 +1,5 @@
+FROM local/c7-systemd
+RUN yum install -y httpd iproute
+ONBUILD COPY default1.html /var/www/html
+ONBUILD COPY default2.html /var/www/html
+CMD ["usr/sbin/httpd","-DFOREGROUND"]
