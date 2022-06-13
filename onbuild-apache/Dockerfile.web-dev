@@ -1,0 +1,9 @@
+FROM c75:web-base01
+COPY index1.html /var/www/html
+COPY index2.html /var/www/html
+COPY index3.html /var/www/html
+RUN hostname >> /var/www/html/index1.html
+RUN date >> /var/www/html/index2.html
+RUN uname -r >> /var/www/html/index3.html
+RUN date >> /var/www/html/default1.html
+RUN date >> /var/www/html/default2.html
